@@ -7,7 +7,7 @@ $(function(){
         url : '/api/latest',
         success : function(items){
             $.each(items, function(i, items){
-                $items.append('<li>'+'Item: ' + item.title +'</li>')
+                $items.append('<li>'+'Item: ' + items.title +'</li>')
             });
         }
     });
