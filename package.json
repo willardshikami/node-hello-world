@@ -2,7 +2,7 @@
   "name": "node-hello-world",
   "version": "0.0.0",
   "description": "simple node app",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,6 +15,11 @@
   "bugs": {
     "url": "https://github.com/willardshikami/node-hello-world/issues"
   },
+
+  "engines": {
+    "node": "~6.9.2"
+  },
+
   "dependencies": {
     "express": "~4.15.2"
   }
