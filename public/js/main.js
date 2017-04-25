@@ -1,14 +1,12 @@
-$(function(){
-
-    var $items = $('#items');
-    
-    $.ajax({
-        type : 'GET',
-        url : '/api/latest',
-        success : function(items){
-            $.each(items, function(i, items){
-                $items.append('<li>'+'Name: ' + items.title +'</li>' + '<li>'+'Url: ' + items.url +'</li>' + '<br/>')
-            });
-        }
-    });
+angular.module('resourceApp', [])
+.controller('ResourceAppController', function($scope, $http){
+    var resourceView = this;
+    resourceView.loadResources = function(){
+        $http({
+            url: 'api/resources',
+            method: 'GET'
+        }).then(function(resources){
+            $scope.resources = resources.data;
+        });
+    };
 });

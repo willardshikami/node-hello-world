@@ -1,23 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>RESOURCES</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/style.css" rel="stylesheet">
+<html ng-app="resourceApp">
 
-    </head>
-    <body>
+<head>
+    <title>RESOURCES</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <!--Angular-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+
+</head>
+
+<body ng-controller="ResourceAppController as resourceView">
+
+    <div ng-init="resourceView.loadResources()">
         <h1>RESOURCES</h1>
-        <ul id="items">
-            
-        </ul>
+        <div ng-repeat="resource in resources">
+            <h3>{{ resource.title }}</h3>
+            <a href="{{ resource.url }}">View More</a>
+        </div>
+        
+    </div>
 
     <!--reference jQuery-->
-    <script
-        src="https://code.jquery.com/jquery-3.2.1.min.js"
-        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous"></script> 
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
-    </body>
+</body>
+
 </html>

@@ -11,7 +11,7 @@ app.set('port', process.env.PORT || 3000);
 
 
 //JSON api
-app.get('/api/latest', function(req, res){
+app.get('/api/resources', function(req, res){
     res.json([{
         title: "Backbone",
         url : "http://backbonejs.org/"
