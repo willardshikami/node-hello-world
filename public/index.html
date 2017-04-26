@@ -13,9 +13,9 @@
 
 <body ng-controller="ResourceAppController as resourceView">
 
-    <div ng-init="resourceView.loadResources()">
+    <div class="resource-header" ng-init="resourceView.loadResources()">
         <h1>RESOURCES</h1>
-        <div ng-repeat="resource in resources">
+        <div class="resource-body" ng-repeat="resource in resources">
             <h3>{{ resource.title }}</h3>
             <a href="{{ resource.url }}">View More</a>
         </div>
