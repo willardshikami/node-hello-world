@@ -37,16 +37,32 @@
 <div class="container theme-showcase" role="main">
     <div class="page-header">
         <h1 class="text-center">JavaScript Resources</h1>
-        <p class="text-center">Below is a list of JavaScript (and a few HTML and CSS thrown in for good measure) resources, very loosely grouped by category and sub-category.</p>
+        <p class="text-center">Below is a list of JavaScript (and a few HTML and CSS thrown in for good measure) <br> resources, very loosely grouped by category and sub-category.</p>
     </div>
 
-<div class="resource-header" ng-init="resourceView.loadResources()">
-        <div class="resource-body" ng-repeat="resource in resources">
-            <h3>{{ resource.title }}</h3>
-            <a href="{{ resource.url }}">View More</a>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-4">
+            <input type="text" placeholder="Type to filter..." ng-model="resourceList.search" style="width:70%; padding: 7px; margin: 0 0 20px 0;" >
         </div>
-        
     </div>
+</div>
+
+<div ng-init="resourceView.loadResources()">
+    <div class="container">
+    <div class="row">
+        <div class="col-sm-4" ng-repeat="resource in resources | filter:resourceList.search | orderBy: Title">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{ resource.title }}</h3>
+                </div>
+                <div class="panel-body">
+                    <a class="btn btn-sm btn primary" href="{{ resource.url }}" target="_blank">View More</a>   
+                </div>             
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
 </div>
 
     <!--reference jQuery-->
@@ -54,5 +70,4 @@
         crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
 </body>
-
 </html>
