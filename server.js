@@ -1,14 +1,17 @@
 var express = require('express');
+var MongoClient = require('mongodb').MongoClient;
 var app = express();
 var http = require('http');
 app.use(express.static('public'));
 
 
+//connecting to the db
+MongoClient.connect("mongodb:127.0.0.1:3000/resources", function(err, db){
+
+});
 
 
-//environments
 app.set('port', process.env.PORT || 3000);
-
 
 //JSON api
 app.get('/api/resources', function (req, res) {

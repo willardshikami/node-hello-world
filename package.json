@@ -1,6 +1,6 @@
 {
   "name": "node-hello-world",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "simple node app",
   "main": "server.js",
   "scripts": {
@@ -15,12 +15,12 @@
   "bugs": {
     "url": "https://github.com/willardshikami/node-hello-world/issues"
   },
-
   "engines": {
     "node": "~6.9.2"
   },
-
   "dependencies": {
-    "express": "~4.15.2"
+    "express": "~4.15.2",
+    "mongodb": "~2.4.9",
+    "mongoose": "^4.9.8"
   }
 }
