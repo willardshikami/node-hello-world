@@ -8,7 +8,8 @@
     <link href="css/style.css" rel="stylesheet">
 
     <!--Bootstrap-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
 
     <!--Angular-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
@@ -16,58 +17,58 @@
 </head>
 
 <body ng-controller="ResourceAppController as resourceView">
-<nav class="navbar navbar-inverse navbar-fixed-top ">
-    <div class="container">
-        <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+    <nav class="navbar navbar-inverse navbar-fixed-top ">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-            <a class="navbar-brand" href="#">Resources</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li><a href="#">About</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-<div class="container theme-showcase" role="main">
-    <div class="page-header">
-        <h1 class="text-center">JavaScript Resources</h1>
-        <p class="text-center">Below is a list of JavaScript (and a few HTML and CSS thrown in for good measure) <br> resources, very loosely grouped by category and sub-category.</p>
-    </div>
-
-    <div class="row">
-        <div class="col-md-6 col-md-offset-4">
-            <input type="text" placeholder="Type to filter..." ng-model="resourceList.search" style="width:70%; padding: 7px; margin: 0 0 20px 0;" >
-        </div>
-    </div>
-</div>
-
-<div ng-init="resourceView.loadResources()">
-    <div class="container">
-    <div class="row">
-        <div class="col-sm-4" ng-repeat="resource in resources | filter:resourceList.search | orderBy: Title">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title">{{ resource.title }}</h3>
-                </div>
-                <div class="panel-body">
-                    <a class="btn btn-sm btn primary" href="{{ resource.url }}" target="_blank">View More</a>   
-                </div>             
+                <a class="navbar-brand" href="#">RESOURCES</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">About</a></li>
+                </ul>
             </div>
         </div>
+    </nav>
+
+    <div class="container theme-showcase" role="main">
+        <div class="page-header">
+            <h1 class="text-center">JavaScript Resources</h1>
+            <p class="text-center">Below is a list of JavaScript (and a few HTML and CSS thrown in for good measure) <br> resources, very loosely grouped by category and sub-category.</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 col-md-offset-4">
+                <input type="text" placeholder="Type to filter..." ng-model="resourceList.search" style="width:70%; padding: 7px; margin: 0 0 20px 0;">
+            </div>
         </div>
     </div>
-</div>
-</div>
+
+    <div ng-init="resourceView.loadResources()">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4" ng-repeat="resource in resources | filter:resourceList.search | orderBy: Title">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">{{ resource.title }}</h3>
+                        </div>
+                        <div class="panel-body">
+                            <a class="btn btn-sm btn primary" href="{{ resource.url }}" target="_blank">View More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!--reference jQuery-->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
 </body>
+
 </html>
