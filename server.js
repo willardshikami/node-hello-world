@@ -12,7 +12,7 @@ app.set('port', process.env.PORT || 3000);
 
 
 //connecting to the db
-mongoose.connect('mongodb://willard:wssnu9295@ds149431.mlab.com:49431/js_resources');
+mongoose.connect('');
 var db = mongoose.connection;
 
 //checking for connection to the DB
@@ -38,6 +38,13 @@ var resourceSchema = mongoose.Schema({
 })
 
 var resource = mongoose.model('resource', resourceSchema);
+
+app.get('/api/resources', function (req, res) {    
+    resource.find().exec(function (err, resources)
+     {
+         res.json(resources);
+        });
+    });
 
 
 var server = http.createServer(app).listen(app.get('port'), function () {
