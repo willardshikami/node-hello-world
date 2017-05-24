@@ -1,44 +1,43 @@
 var express = require('express');
-var MongoClient = require('mongodb').MongoClient;
+var path = require('path');
 var app = express();
 var http = require('http');
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 app.use(express.static('public'));
 
-
-//connecting to the db
-MongoClient.connect("mongodb:127.0.0.1:3000/resources", function(err, db){
-
-});
 
 
 app.set('port', process.env.PORT || 3000);
 
-//JSON api
-app.get('/api/resources', function (req, res) {
-    res.json([{
-            title: "Backbone",
-            url: "http://backbonejs.org/"
-        }, {
-            title: "Angular",
-            url: "https://angularjs.org/"
-        }, {
-            title: "React",
-            url: "https://facebook.github.io/react/"
-        }, {
-            title: "Ember",
-            url: "https://emberjs.com/"
-        }, {
-            title: "Aurelia",
-            url: "http://aurelia.io/"
-        }, {
-            title: "Bootstrap",
-            description: "Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web.",
-            url: "http://getbootstrap.com/"
-        }
 
-    ]);
+//connecting to the db
+mongoose.connect('mongodb://<dbuser>:<dbpassword>@ds149431.mlab.com:49431/js_resources');
+var db = mongoose.connection;
+
+//checking for connection to the DB
+db.on('error',console.error.bind(console, 'connection error:'));
+db.once('open', function(){
+    console.log('We are connected');
 });
 
+//Defining the Schema
+var resourceSchema = mongoose.Schema({
+    title :{
+        type : String,
+        required : true
+    },
+    description :{
+        type : String,
+        required : true
+    },
+    url:{
+        type : String,
+        required: true
+    },
+})
+
+var resource = mongoose.model('resource', resourceSchema);
 
 
 var server = http.createServer(app).listen(app.get('port'), function () {
