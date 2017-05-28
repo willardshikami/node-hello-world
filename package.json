@@ -19,9 +19,9 @@
     "node": "~6.9.2"
   },
   "dependencies": {
-    "body-parser": "^1.17.2",
+    "body-parser": "*",
     "express": "*",
     "mongodb": "*",
-    "mongoose": "^4.10.1"
+    "mongoose": "*"
   }
 }
