@@ -48,24 +48,6 @@
         </div>
     </div>
 
-    <div ng-init="resourceView.loadResources()">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4" ng-repeat="resource in resources | filter:resourceList.search | orderBy: Title">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">{{ resource.title }}</h3>
-                        </div>
-                        <div class="panel-body">
-                            <p class="desc">{{resource.description}}</p>
-                            <a class="btn btn-sm btn primary" href="{{ resource.url }}" target="_blank">View More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!--reference jQuery-->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>

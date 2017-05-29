@@ -15,7 +15,7 @@ app.set('port', process.env.PORT || 3000);
 
 
 //connecting to the db
-mongoose.connect('mongodb://willard:wssnu9295@ds149431.mlab.com:49431/js_resources');
+mongoose.connect('');
 var db = mongoose.connection;
 
 //checking for connection to the DB
@@ -32,6 +32,16 @@ app.get('/api/resources', function (req, res) {
             throw err;
         }
         res.json(resources);
+    });
+});
+
+//displaying a single resource
+app.get('/api/resources/:_id', function(req, res){
+    Resource.getResourceById(req.params._id, function(err, resource){
+        if(err){
+            throw err;
+        }
+        res.json(resource);
     });
 });
 

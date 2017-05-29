@@ -18,9 +18,14 @@ var resourceSchema = mongoose.Schema({
 })
 
 //defining the model and making it accessible 
-var Resource =module.exports = mongoose.model('resource', resourceSchema);
+var Resource = module.exports = mongoose.model('resource', resourceSchema);
 
-//function to get resource
+//function to get resources
 module.exports.getResources = function(callback, limit){
     Resource.find(callback).limit(limit);
 }
+
+//function to get a single resource
+module.exports.getResourceById = function(id, callback){
+    Resource.findById(id, callback);
+}  
