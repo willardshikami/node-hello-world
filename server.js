@@ -37,15 +37,17 @@ var resourceSchema = mongoose.Schema({
     },
 })
 
+//defining the model
 var resource = mongoose.model('resource', resourceSchema);
 
+//displaying the resources
 app.get('/api/resources', function (req, res) {
     resource.find().exec(function (err, resources) {
         res.json(resources);
     });
 });
 
-
+//connecting to the server
 var server = http.createServer(app).listen(app.get('port'), function () {
     console.log('Server listening on port ' + app.get('port'));
 });
