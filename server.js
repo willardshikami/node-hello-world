@@ -16,7 +16,7 @@ app.set('port', process.env.PORT || 3000);
 app.use(bodyParser.json());
 
 //connecting to the db
-mongoose.connect('mongodb://willard:wssnu9295@ds149431.mlab.com:49431/js_resources');
+mongoose.connect('');
 var db = mongoose.connection;
 
 //checking for connection to the DB
