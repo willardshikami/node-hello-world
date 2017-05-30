@@ -12,9 +12,19 @@ angular.module('resourceApp')
 
 			//display single book
 			$scope.getResource = function(){
+				var id = $routeParams.id
 				$http.get('/api/resources/'+id)
 				.then(function(response){
 					$scope.resource = response.data;
+				});
+			}
+
+			//add resource
+			$scope.addResource = function(){
+				console.log($scope.book);
+				$http.post('/api/resources', $scope.resource)
+				.then(function(response){
+					window.location.href='#!/resources'
 				});
 			}
 	}]);

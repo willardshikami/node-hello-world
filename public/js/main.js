@@ -11,8 +11,13 @@ resourceApp.config(function($routeProvider){
         templateUrl: 'views/resources.html'
     });
 
-    $routeProvider.when('/resources/details/:id',{
+    $routeProvider.when('/resources/:id',{
         controller: 'ResourcesController',
         templateUrl: 'views/resource_details.html'
+    });
+
+    $routeProvider.when('/add_resource',{
+        controller: 'ResourcesController',
+        templateUrl: 'views/add_resource.html'
     });
 });

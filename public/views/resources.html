@@ -1,3 +1,14 @@
+<div class="page-header">
+    <h1 class="text-center">JavaScript Resources</h1>
+    <p class="text-center">Below is a list of JavaScript (and a few HTML and CSS thrown in for good measure) <br> resources, very loosely grouped
+        by category and sub-category.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-4">
+        <input type="text" placeholder="Type to filter..." ng-model="resourceList.search" style="width:70%; padding: 7px; margin: 0 0 20px 0;">
+    </div>
+</div>
 <div ng-init="getResources()">
     <div class="container">
         <div class="row">
@@ -8,7 +19,7 @@
                     </div>
                     <div class="panel-body">
                         <p class="desc">{{resource.description}}</p>
-                        <a class="btn btn primary" href="#!/resources/details/{{resource._id}}" target="_blank">View More</a>
+                        <a class="btn" href="#!/resources/{{resource._id}}" target="_blank">View More</a>
                     </div>
                 </div>
             </div>
