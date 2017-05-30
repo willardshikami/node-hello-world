@@ -1,6 +1,6 @@
-angular.module('resourceApp', [])
-	.controller('ResourceAppController', ['$scope', '$http', '$location', '$routeParams', function($scope, $http, $location, $routeParams){
-		console.log('ResourceAppController loaded...')
+angular.module('resourceApp')
+	resourceApp.controller('ResourcesController', ['$scope', '$http', '$location', '$routeParams', function($scope, $http, $location, $routeParams){
+		console.log('ResourcesController loaded...')
 
 		//display books
 			$scope.getResources = function(){
