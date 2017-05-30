@@ -29,3 +29,8 @@ module.exports.getResources = function(callback, limit){
 module.exports.getResourceById = function(id, callback){
     Resource.findById(id, callback);
 }  
+
+//function to add resource to DB
+module.exports.addResource = function(resource, callback){
+    Resource.create(resource, callback);
+}
