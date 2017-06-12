@@ -4,9 +4,7 @@
   "description": "simple node app",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "build": "webpack -d && webpack-dev-server --content-base src/ --inline --hot --port 1234",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",

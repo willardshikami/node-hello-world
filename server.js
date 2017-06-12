@@ -12,7 +12,7 @@ app.use(express.static('public'));
 Resource = require('./models/resources');
 
 
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 5000);
 app.use(bodyParser.json());
 
 //connecting to the db
