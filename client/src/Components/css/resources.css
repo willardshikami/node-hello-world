@@ -1,0 +1,11 @@
+.Resources{
+    margin: 50px 80px;
+}
+
+.link{
+    text-decoration: none !important;
+}
+
+.link:hover{
+    color: #111517;
+}
